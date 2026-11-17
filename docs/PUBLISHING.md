@@ -45,5 +45,4 @@ Before using the workflow:
 Both publish workflows run when:
 
 - A release is published.
-- A `v*` tag is pushed.
 - The workflow is run manually from GitHub Actions.
