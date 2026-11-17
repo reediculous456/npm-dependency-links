@@ -15,6 +15,14 @@ Visit the npmjs.com profile of your dependencies by simply `CMD/Ctrl+click` on t
 
 ![link example](images/promo.gif)
 
+## Underline
+
+Package names are underlined all the time by default. To show the underline only while holding Command (macOS) or Ctrl, set:
+
+`"npmDependencyLinks.underlineOnlyWithModifier": true`
+
+Clicking while that key is held still opens the package page, and so does Go to Definition. If `editor.multiCursorModifier` is `ctrlCmd`, hold Alt instead — the same key VS Code uses for Go to Definition.
+
 ## Custom Registry URL
 
 To change the URL, you can set the configuration value in `settings.json` as below:

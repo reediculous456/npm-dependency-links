@@ -133,6 +133,36 @@ export function defaultRegistrySettings(): Required<RegistrySettings> {
   };
 }
 
+export function findLinkAtOffset(
+  links: readonly DependencyLink[],
+  offset: number
+): DependencyLink | undefined {
+  return links.find(
+    (link) => offset >= link.startOffset && offset <= link.endOffset
+  );
+}
+
+export type SelectionChangeKind = "keyboard" | "mouse" | "command" | "unknown";
+
+const MODIFIER_LINK_ACTIVATION_MAX_AGE_MS = 1500;
+
+export function isModifierLinkActivation(options: {
+  kind: SelectionChangeKind;
+  atSentinel: boolean;
+  ageMs: number;
+  previousOnLink: boolean;
+}): boolean {
+  if (!options.atSentinel || !options.previousOnLink || options.ageMs < 0) {
+    return false;
+  }
+
+  if (options.ageMs > MODIFIER_LINK_ACTIVATION_MAX_AGE_MS) {
+    return false;
+  }
+
+  return options.kind === "command" || options.kind === "unknown";
+}
+
 function getObjectProperties(node: Node): Node[] {
   return node.children?.filter((child) => child.type === "property") ?? [];
 }

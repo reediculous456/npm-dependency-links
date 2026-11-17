@@ -3,7 +3,9 @@ const { describe, it } = require("node:test");
 const {
   buildRegistryUrl,
   findDependencyLinks,
-  findPnpmWorkspaceDependencyLinks
+  findLinkAtOffset,
+  findPnpmWorkspaceDependencyLinks,
+  isModifierLinkActivation
 } = require("../dist/dependencyLinks");
 
 describe("findDependencyLinks", () => {
@@ -137,6 +139,91 @@ describe("buildRegistryUrl", () => {
         registryUrlPattern: ""
       }),
       "https://www.npmjs.com/package/react"
+    );
+  });
+});
+
+describe("findLinkAtOffset", () => {
+  it("returns the link whose range contains the offset, including the end boundary", () => {
+    const links = [
+      { packageName: "react", target: "https://example.test/react", startOffset: 10, endOffset: 15 },
+      { packageName: "vite", target: "https://example.test/vite", startOffset: 30, endOffset: 34 }
+    ];
+
+    assert.equal(findLinkAtOffset(links, 10)?.packageName, "react");
+    assert.equal(findLinkAtOffset(links, 15)?.packageName, "react");
+    assert.equal(findLinkAtOffset(links, 16), undefined);
+    assert.equal(findLinkAtOffset(links, 32)?.packageName, "vite");
+  });
+});
+
+describe("isModifierLinkActivation", () => {
+  it("accepts a recent command or unknown jump onto the sentinel", () => {
+    assert.equal(
+      isModifierLinkActivation({
+        kind: "command",
+        atSentinel: true,
+        ageMs: 20,
+        previousOnLink: true
+      }),
+      true
+    );
+    assert.equal(
+      isModifierLinkActivation({
+        kind: "unknown",
+        atSentinel: true,
+        ageMs: 20,
+        previousOnLink: true
+      }),
+      true
+    );
+  });
+
+  it("ignores keyboard and mouse selections, stale jumps, and other positions", () => {
+    assert.equal(
+      isModifierLinkActivation({
+        kind: "keyboard",
+        atSentinel: true,
+        ageMs: 20,
+        previousOnLink: true
+      }),
+      false
+    );
+    assert.equal(
+      isModifierLinkActivation({
+        kind: "mouse",
+        atSentinel: true,
+        ageMs: 20,
+        previousOnLink: true
+      }),
+      false
+    );
+    assert.equal(
+      isModifierLinkActivation({
+        kind: "command",
+        atSentinel: true,
+        ageMs: 1501,
+        previousOnLink: true
+      }),
+      false
+    );
+    assert.equal(
+      isModifierLinkActivation({
+        kind: "command",
+        atSentinel: false,
+        ageMs: 20,
+        previousOnLink: true
+      }),
+      false
+    );
+    assert.equal(
+      isModifierLinkActivation({
+        kind: "command",
+        atSentinel: true,
+        ageMs: 20,
+        previousOnLink: false
+      }),
+      false
     );
   });
 });

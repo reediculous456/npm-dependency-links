@@ -41,6 +41,11 @@
           "type": "string",
           "default": "https://www.npmjs.com/package/{{pkg}}",
           "description": "URL pattern used for dependency links. The {{pkg}} token is replaced with the dependency package name."
+        },
+        "npmDependencyLinks.underlineOnlyWithModifier": {
+          "type": "boolean",
+          "default": false,
+          "description": "Underline package names only while holding Command (macOS) or Ctrl. Clicking while that key is held, or Go to Definition, opens the package page. If the multi-cursor modifier is set to Command/Ctrl, hold Alt instead, matching Go to Definition."
         }
       }
     }
