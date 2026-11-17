@@ -1,0 +1,67 @@
+{
+  "name": "npm-dependency-links",
+  "displayName": "npm Dependency Links",
+  "description": "Open npm package pages directly from dependency names in package.json.",
+  "version": "0.1.0",
+  "publisher": "reediculous456",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reediculous456/npm-dependency-links.git"
+  },
+  "bugs": {
+    "url": "https://github.com/reediculous456/npm-dependency-links/issues"
+  },
+  "homepage": "https://github.com/reediculous456/npm-dependency-links#readme",
+  "keywords": [
+    "npm",
+    "dependencies",
+    "package.json",
+    "document-links",
+    "open-vsx"
+  ],
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:json",
+    "onLanguage:jsonc",
+    "onLanguage:yaml"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "npm Dependency Links",
+      "properties": {
+        "npmDependencyLinks.registryUrlPattern": {
+          "type": "string",
+          "default": "https://www.npmjs.com/package/{{pkg}}",
+          "description": "URL pattern used for dependency links. The {{pkg}} token is replaced with the dependency package name."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "test": "npm run compile && node --test test/*.test.js",
+    "check": "npm test",
+    "vscode:prepublish": "npm run compile",
+    "package": "vsce package",
+    "publish:open-vsx": "ovsx publish",
+    "publish:vscode": "vsce publish"
+  },
+  "dependencies": {
+    "jsonc-parser": "^3.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^4.1.1",
+    "ovsx": "^1.4.0",
+    "typescript": "^7.0.2"
+  }
+}
