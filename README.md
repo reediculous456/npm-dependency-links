@@ -1,11 +1,11 @@
 # npm-dependency-links
 
-[![Visual Studio Marketplace Version](https://vsmarketplacebadges.dev/version/reediculous456.npm-dependency-links.svg)](https://marketplace.visualstudio.com/items?itemName=reediculous456.npm-dependency-links)
-[![Visual Studio Marketplace Downloads](https://vsmarketplacebadges.dev/downloads/reediculous456.npm-dependency-links.svg)](https://marketplace.visualstudio.com/items?itemName=reediculous456.npm-dependency-links)
-[![Visual Studio Marketplace Rating](https://vsmarketplacebadges.dev/rating/reediculous456.npm-dependency-links.svg)](https://marketplace.visualstudio.com/items?itemName=reediculous456.npm-dependency-links)
+[![Visual Studio Marketplace Version](https://vsmarketplacebadges.dev/version/reediculous456.npm-package-page-links.svg)](https://marketplace.visualstudio.com/items?itemName=reediculous456.npm-package-page-links)
+[![Visual Studio Marketplace Downloads](https://vsmarketplacebadges.dev/downloads/reediculous456.npm-package-page-links.svg)](https://marketplace.visualstudio.com/items?itemName=reediculous456.npm-package-page-links)
+[![Visual Studio Marketplace Rating](https://vsmarketplacebadges.dev/rating/reediculous456.npm-package-page-links.svg)](https://marketplace.visualstudio.com/items?itemName=reediculous456.npm-package-page-links)
 
-[![Open VSX Version](https://img.shields.io/open-vsx/v/reediculous456/npm-dependency-links)](https://open-vsx.org/extension/reediculous456/npm-dependency-links)
-[![Open VSX Downloads](https://img.shields.io/open-vsx/dt/reediculous456/npm-dependency-links)](https://open-vsx.org/extension/reediculous456/npm-dependency-links)
+[![Open VSX Version](https://img.shields.io/open-vsx/v/reediculous456/npm-package-page-links)](https://open-vsx.org/extension/reediculous456/npm-package-page-links)
+[![Open VSX Downloads](https://img.shields.io/open-vsx/dt/reediculous456/npm-package-page-links)](https://open-vsx.org/extension/reediculous456/npm-package-page-links)
 
 Links the dependencies in your package.json to their npmjs.com profile.
 

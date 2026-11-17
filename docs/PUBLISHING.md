@@ -22,7 +22,7 @@ The GitHub Actions workflow at `.github/workflows/open-vsx.yml` uses Open VSX tr
 Before using the workflow:
 
 1. Create or verify the `reediculous456` namespace at <https://open-vsx.org>.
-2. Configure an Open VSX trusted publisher for `reediculous456/npm-dependency-links`.
+2. Configure an Open VSX trusted publisher for `reediculous456/npm-package-page-links`.
 3. Confirm the trusted publisher is allowed to publish this extension under the `reediculous456` namespace.
 
 ## Visual Studio Marketplace
@@ -37,7 +37,7 @@ The GitHub Actions workflow at `.github/workflows/vscode-marketplace.yml` uses V
 Before using the workflow:
 
 1. Create or verify the `reediculous456` publisher in the Visual Studio Marketplace publisher portal.
-2. Configure trusted publishing for `reediculous456/npm-dependency-links`.
+2. Configure trusted publishing for `reediculous456/npm-package-page-links`.
 3. Confirm the trusted publisher is allowed to publish this extension under the `reediculous456` publisher.
 
 ## Release workflow

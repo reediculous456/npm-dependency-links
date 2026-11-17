@@ -1,6 +1,6 @@
 {
-  "name": "npm-dependency-links",
-  "displayName": "npm Dependency Links",
+  "name": "npm-package-page-links",
+  "displayName": "npm Package Page Links",
   "description": "Open npm package pages directly from dependency names in package.json.",
   "version": "1.0.0",
   "publisher": "reediculous456",
