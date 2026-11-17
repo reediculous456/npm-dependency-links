@@ -3,7 +3,7 @@
   "displayName": "npm Package Page Links",
   "icon": "images/icon.png",
   "description": "Open npm package pages directly from dependency names in package.json.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "publisher": "reediculous456",
   "license": "MIT",
   "repository": {
